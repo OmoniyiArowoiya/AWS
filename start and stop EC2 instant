@@ -30,6 +30,11 @@ exports.handler = (event, context, callback) => {
 	.catch(err => callback(err));
 };	
 
+Configure the test environment in Json format.
+{
+    "instanceRegion": "us-east-1",
+    "instanceId": "i-0ad731ad8a97d78b1"
+}
 specify the instanceRegion and instanceid
 
 

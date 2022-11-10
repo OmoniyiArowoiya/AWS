@@ -33,3 +33,6 @@ def lambda_handler(event, context):
     ec2.start_instances(InstanceIds=instances)
     print('started your instances: ' + str(instances))
     
+    
+https://aws.amazon.com/premiumsupport/knowledge-center/start-stop-lambda-eventbridge/
+    

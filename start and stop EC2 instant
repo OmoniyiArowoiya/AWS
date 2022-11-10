@@ -10,6 +10,33 @@
 
 // Lambda functions to start and stop your EC2 instance
 
+To stop instance.
+const AWS = require('aws-sdk');
+
+exports.handler = (event, context, callback) => {
+	const ec2 = new AWS.EC2({region: event.instanceRegion});
+	ec2.stopInstances({InstanceIds: [event.instanceId]}).promise()
+	.then(() => callback(null, 'succesfully stopped $(event.instanceId)'))
+	.catch(err => callback(err));
+};
+
+To start instance.
+const AWS = require('aws-sdk');
+
+exports.handler = (event, context, callback) => {
+	const ec2 = new AWS.EC2({region: event.instanceRegion});
+	ec2.startInstances({InstanceIds: [event.instanceId]}).promise()
+	.then(() => callback(null, 'succesfully stopped $(event.instanceId)'))
+	.catch(err => callback(err));
+};	
+
+specify the instanceRegion and instanceid
+
+
+
+
+
+
 
 // To stop
 
